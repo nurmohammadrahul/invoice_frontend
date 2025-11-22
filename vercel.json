@@ -3,7 +3,10 @@
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/static-build"
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
       }
     ],
     "routes": [
@@ -13,6 +16,8 @@
       }
     ],
     "env": {
-      "REACT_APP_API_URL": "https://your-backend.vercel.app"
+      "REACT_APP_API_URL": "https://invoice-backend-omega-woad.vercel.app/api",
+      "REACT_APP_NAME": "Invoice Management System",
+      "REACT_APP_VERSION": "1.0.0"
     }
   }
