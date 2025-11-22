@@ -1,23 +1,47 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "build"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/build/$1"
-      }
-    ],
-    "env": {
-      "REACT_APP_API_URL": "https://invoice-backend-eight-rho.vercel.app/api",
-      "REACT_APP_NAME": "Invoice Management System",
-      "REACT_APP_VERSION": "1.0.0"
     }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/build/favicon.ico"
+    },
+    {
+      "src": "/asset-manifest.json",
+      "dest": "/build/asset-manifest.json"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/build/manifest.json"
+    },
+    {
+      "src": "/logo192.png",
+      "dest": "/build/logo192.png"
+    },
+    {
+      "src": "/logo512.png",
+      "dest": "/build/logo512.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://invoice-backend-eight-rho.vercel.app/api",
+    "REACT_APP_NAME": "Invoice Management System",
+    "REACT_APP_VERSION": "1.0.0"
   }
+}
